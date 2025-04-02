@@ -117,7 +117,7 @@
                     
                      
                      <br>
-                     <button type="button" onclick="checkAnswers()">Submit</button>
+                     <button type="button" onclick="checkAnswersRegularExcercises()">Submit</button>
                  </form>
                  </section>
              </div>
@@ -129,6 +129,33 @@
    
     <script>
         src="scriptfr.js"
+
+        function checkAnswersRegularExcercises() {
+    let score = 0;
+    let totalQuestions = 3; // Update this if you add more questions
+    let feedback = "";
+
+    // Correct answers
+    const correctAnswersRegularVerbs = {
+        "vousFormOfRegarder": "vousRegardez",
+        "nousFormOfFinir": "nousFinissons",
+        "ilFormOfFondre": "ilFond"
+    };
+
+    // Check radio button answers
+    for (let key in correctAnswersRegularVerbs) {
+        let selected = document.querySelector(`input[name='${key}']:checked`);
+        if (selected && selected.value === correctAnswersRegularVerbs[key]) {
+            score++;
+        }
+    }
+
+    // Display feedback
+    feedback = `You scored ${score} out of ${totalQuestions}.`;
+    alert(feedback);
+}
+
+
         </script>
 </body>
 </html>
