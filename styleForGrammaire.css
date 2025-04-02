@@ -92,7 +92,7 @@ th {
 
 /*Quiz styling in exercises*/
 fieldset {
-    border: 2px solid #b91a71;
+    border: 2px ridge #b91a71;
     padding: 15px;
     max-width: 300px;
 }
