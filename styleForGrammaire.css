@@ -91,6 +91,13 @@ th {
 
 
 /*Quiz styling in exercises*/
+.avoirInJe, .avoirForIl, .translateIlsOntUnChat, .translateEveryoneHasACat, .allerInVous, .allerForNous, .translateWeGoToCinema, .translateTuVasALecole, .etreForElles, .etreForOn, .translateTuEsCoiffeur, .translateItsIncredible, .faireInVous, .faireForNous, .translateWeMakeCake, .translateAreYouDoingHomework, .regarderInVous, .allerForNous, .fondreForIl 
+{
+    background-color: #d4c3e8;
+}
+
+
+
 fieldset {
     border: 2px ridge #6b2a61;
     padding: 15px;
