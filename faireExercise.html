@@ -145,7 +145,7 @@
             
                 
                 <br>
-                <button type="button" onclick="checkAnswers()">Submit</button>
+                <button type="button" onclick="checkAnswersFaireQuiz()">Submit</button>
             </form>
             </section>
         </div>
@@ -157,6 +157,44 @@
     
     <script>
         src="scriptfr.js"
+
+        function checkAnswersFaireQuiz() {
+    let score = 0;
+    let totalQuestions = 4; // Update this if you add more questions
+    let feedback = "";
+
+    // Correct answers
+    const correctAnswersFaire = {
+        "elleFormOfFaire": "elleFait",
+        "nousFormOfFaire": "nousFaisons",
+        "translateWeMakeCake": "nousFaisonsGateau",
+        "translateAreYouDoingHomework": ["faisTuDevoirs", "faitesVousDevoirs", "vousFaitesDevoirs", "tuFaisDevoirs"]
+    };
+
+    // Check radio button answers
+    for (let key in correctAnswersFaire) {
+        if (key !== "translateAreYouDoingHomework") { // Skip checkboxes in this loop
+            let selected = document.querySelector(`input[name='${key}']:checked`);
+            if (selected && selected.value === correctAnswersFaire[key]) {
+                score++;
+            }
+        }
+    }
+
+    // Check checkbox answers
+    let selectedCheckboxes = document.querySelectorAll("input[name='translateAreYouDoingHomework']:checked");
+    let selectedValues = Array.from(selectedCheckboxes).map(cb => cb.value);
+    let correctValues = correctAnswersFaire["translateAreYouDoingHomework"];
+
+    if (selectedValues.length === correctValues.length && selectedValues.every(val => correctValues.includes(val))) {
+        score++;
+    }
+
+    // Display feedback
+    feedback = `You scored ${score} out of ${totalQuestions}.`;
+    alert(feedback);
+}
+
         </script>
 </body>
 </html>
