@@ -79,18 +79,27 @@ body {
 table {
     border-collapse: collapse; /* Removes double borders */
     width: 50%;
+    
+   
 }
 th, td {
-    border: 2px solid #dcd8e0; /* Border for table cells */
+    border: 2px solid #4d0e87; /* Border for table cells */
     padding: 10px; /* Space inside the cell */
     text-align: center;
+    
+    
 }
 th {
-    background-color:rgb(125, 11, 224); /*  background for headers */
+    background-color:rgb(148, 82, 206); /*  background for headers */
+    color: #f1eaf1;
+}
+
+td {
+    background-color: #d4c3e8;
 }
 
 
-/*Quiz styling in exercises*/
+/*Quiz styling in exercises and input er verb examples etc.,*/
 fieldset {
     border: solid #4d0e87;
     padding: 15px;
