@@ -54,13 +54,7 @@ width: 100%;
 display: block;
 }
 
-/* Responsive Styles */
-.menu-toggle {
-display: none;
-cursor: pointer;
-font-size: 24px;
-color: white;
-}
+
 
 /*Main style */
 body {
