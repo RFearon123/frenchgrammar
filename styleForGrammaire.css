@@ -5,6 +5,7 @@ nav {
 background-color: #320232;
 padding: 10px;
 
+
 }
 
 .navbar {
@@ -12,7 +13,8 @@ display: flex;
 list-style: none;
 justify-content: space-around;
 align-items: center;
-}/*HOW to make nav bar stretch over full screen css grid */
+
+}
 
 .navbar li {
 position: relative;
@@ -28,6 +30,7 @@ display: block;
 
 .navbar a:hover {
 background-color: rgb(62, 54, 113);
+border-radius: 5%;
 }
 
 /* Dropdown Styles */
@@ -51,8 +54,9 @@ width: 100%;
 }
 
 .navbar li:hover .dropdown {
-display: block;
-}
+    display: block;
+    border-radius: 2%;
+    }
 
 
 
