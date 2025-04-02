@@ -165,7 +165,7 @@
                  
                      
                      <br>
-                     <button type="button" onclick="checkAnswers()">Submit</button>
+                     <button type="button" onclick="checkAnswersEtreQuiz()">Submit</button>
                  </form>
                  </section>
              </div>
@@ -178,6 +178,43 @@
    
     <script>
         src="scriptfr.js"
+        function checkAnswersEtreQuiz() {
+    let score = 0;
+    let totalQuestions = 4; // Update this if you add more questions
+    let feedback = "";
+
+    // Correct answers
+    const correctAnswersEtre = {
+        "ellesFormOfEtre": "ellesSont",
+        "onFormOfEtre": "onEst",
+        "translateTuEsCoiffeur": "youAreAHairedresser",
+        "translateItsIncredible": ["cestIncroyable", "ilEstIncroyable", "ellesEstIncroyable"]
+    };
+
+    // Check radio button answers
+    for (let key in correctAnswersEtre) {
+        if (key !== "translateItsIncredible") { // Skip checkboxes in this loop
+            let selected = document.querySelector(`input[name='${key}']:checked`);
+            if (selected && selected.value === correctAnswersEtre[key]) {
+                score++;
+            }
+        }
+    }
+
+    // Check checkbox answers
+    let selectedCheckboxes = document.querySelectorAll("input[name='translateItsIncredible']:checked");
+    let selectedValues = Array.from(selectedCheckboxes).map(cb => cb.value);
+    let correctValues = correctAnswersEtre["translateItsIncredible"];
+
+    if (selectedValues.length === correctValues.length && selectedValues.every(val => correctValues.includes(val))) {
+        score++;
+    }
+
+    // Display feedback
+    feedback = `You scored ${score} out of ${totalQuestions}.`;
+    alert(feedback);
+}
+
         </script>
 </body>
 </html>
